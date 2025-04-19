@@ -438,3 +438,22 @@ footer {
         margin-bottom: 50px;
     }
 }
+
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  .chatbot-messages {
+    height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+  }
+  /* Add more styles for messages, buttons, etc */

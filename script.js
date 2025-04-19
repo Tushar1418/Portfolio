@@ -80,3 +80,36 @@ document.querySelector('footer p').innerHTML =
         en: { welcome: "Welcome" },
         hi: { welcome: "स्वागत है" }
       };
+
+// Predefined responses
+const botResponses = {
+    "hello": "Hi there! How can I help?",
+    "projects": "I've built 3 major projects: 1) E-commerce site 2) Task app 3) AI tool",
+    "contact": "Email me at tushar@example.com",
+    "default": "I'm still learning. Ask about my projects or skills!"
+  };
+  
+  document.getElementById('chat-toggle').addEventListener('click', () => {
+    document.querySelector('.chatbot-container').style.display = 'flex';
+  });
+  
+  document.getElementById('send-btn').addEventListener('click', sendMessage);
+  
+  function sendMessage() {
+    const userInput = document.getElementById('user-input').value.toLowerCase();
+    const chatBox = document.getElementById('chat-messages');
+    
+    // Add user message
+    chatBox.innerHTML += `<div class="user-msg">${userInput}</div>`;
+    
+    // Bot response
+    const response = Object.keys(botResponses).find(key => userInput.includes(key)) 
+                  ? botResponses[Object.keys(botResponses).find(key => userInput.includes(key))] 
+                  : botResponses.default;
+    
+    chatBox.innerHTML += `<div class="bot-msg">${response}</div>`;
+    
+    // Clear input
+    document.getElementById('user-input').value = '';
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
