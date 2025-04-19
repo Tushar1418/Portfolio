@@ -1,3 +1,5 @@
+import * as THREE from 'three';
+// Sphere that follows mouse
 // Mobile Navigation Toggle
 document.querySelector('.hamburger').addEventListener('click', function() {
     const navLinks = document.querySelector('.nav-links');
@@ -73,3 +75,8 @@ revealOnScroll();
 // Dynamic Year in Footer
 document.querySelector('footer p').innerHTML = 
     `&copy; ${new Date().getFullYear()} Tushar. All rights reserved.`;
+
+    const translations = {
+        en: { welcome: "Welcome" },
+        hi: { welcome: "स्वागत है" }
+      };
